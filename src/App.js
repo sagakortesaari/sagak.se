@@ -9,16 +9,14 @@ import { useState } from "react";
 const Wrapper = styled.div`
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   user-select: none;
   background-color: ${(props) => (props.darkmode ? "#2c2c2c" : "fff")};
   color: ${(props) => (props.darkmode ? "#fff" : "000")};
-`;
-
-const CenterDiv = styled.div`
-  width: 800px;
+  display: flex;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 `;
 
 const NameDiv = styled.div`
@@ -32,22 +30,26 @@ const DescDiv = styled.div`
 `;
 
 const PhotoDiv = styled.div`
+  margin-bottom: 40px;
+
   & img {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
   }
 `;
 
 const ThemeToggler = styled.div`
   cursor: pointer;
   font-size: 25px;
-  margin-left: 20px;
 `;
 
 const Button = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const SocialMediaWrapper = styled.div`
@@ -59,62 +61,71 @@ const SocialMediaWrapper = styled.div`
     color: inherit;
   }
   & svg {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     fill: ${(props) => (props.darkmode ? "#fff" : "000")};
   }
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
+`;
+
+const ContentWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 function App() {
-  const [darkmode, setDarkmode] = useState(false);
+  const [darkmode, setDarkmode] = useState(true);
   console.log(darkmode);
   return (
     <>
       <Wrapper darkmode={darkmode}>
-        <PhotoDiv>
-          <img src={profilepic} alt="me" />
-        </PhotoDiv>
-        <ButtonWrapper>
-          <SocialMediaWrapper darkmode={darkmode}>
-            <Button>
-              <a href="https://github.com/sagakortesaari">
-                <Icon icon="akar-icons:github-fill" />
-              </a>
-            </Button>
-            <Button>
-              <a href="https://www.linkedin.com/in/saga-kortesaari/">
-                <Icon icon="akar-icons:linkedin-fill" />
-              </a>
-            </Button>
-            <Button>
-              <a href="mailto:saga@sagak.se">
-                <Icon icon="fluent:mail-16-filled" />
-              </a>
-            </Button>
-          </SocialMediaWrapper>
-          <Button>
-            <ThemeToggler onClick={() => setDarkmode(!darkmode)}>
-              {" "}
-              {darkmode ? "☀️" : "🌙"}{" "}
-            </ThemeToggler>
-          </Button>
-        </ButtonWrapper>
-        <CenterDiv>
+        <ContentWrapper>
+          <PhotoDiv>
+            <img src={profilepic} alt="me" />
+          </PhotoDiv>
           <NameDiv>
             {" "}
-            <b> Hi there, I'm Saga! ✨ </b>{" "}
+            <b> Hi there, I'm Saga! 🌟 </b>{" "}
           </NameDiv>
           <DescDiv>
-            Future software engineer & M.Sc student in Computer Science at
+            Soon-to-be Software Engineer & M.Sc student in Computer Science at{" "}
             Chalmers University of Technology.
           </DescDiv>
-        </CenterDiv>
+          <ButtonWrapper>
+            <Button>
+              <ThemeToggler onClick={() => setDarkmode(!darkmode)}>
+                {" "}
+                {darkmode ? "☀️" : "🌙"}{" "}
+              </ThemeToggler>
+            </Button>
+            <SocialMediaWrapper darkmode={darkmode}>
+              <Button>
+                <a target="_blank" href="https://github.com/sagakortesaari">
+                  <Icon icon="akar-icons:github-fill" />
+                </a>
+              </Button>
+              <Button>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/saga-kortesaari/"
+                >
+                  <Icon icon="akar-icons:linkedin-fill" />
+                </a>
+              </Button>
+              <Button>
+                <a target="_blank" href="mailto:saga@sagak.se">
+                  <Icon icon="fluent:mail-16-filled" />
+                </a>
+              </Button>
+            </SocialMediaWrapper>
+          </ButtonWrapper>
+        </ContentWrapper>
       </Wrapper>
     </>
   );
