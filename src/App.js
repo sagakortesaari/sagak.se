@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import styled from "styled-components";
 import profilepic from "./me.png";
 import { Icon } from "@iconify/react";
