@@ -32,9 +32,9 @@ const PhotoDiv = styled.div`
   margin-bottom: 40px;
 
   & img {
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
   }
 `;
 
