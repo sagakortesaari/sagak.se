@@ -93,8 +93,8 @@ function App() {
             <b> Hi there, I'm Saga! 🌟 </b>{" "}
           </NameDiv>
           <DescDiv>
-            Soon-to-be Software Engineer & M.Sc student in Computer Science at{" "}
-            Chalmers University of Technology.
+            M.Sc student in Computer Science at Chalmers University of Technology <br />
+            Interested in security & programming 
           </DescDiv>
           <ButtonWrapper>
             <Button>
