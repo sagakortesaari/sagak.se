@@ -105,20 +105,17 @@ function App() {
             </Button>
             <SocialMediaWrapper darkmode={darkmode}>
               <Button>
-                <a target="_blank" href="https://github.com/sagakortesaari">
+                <a target="_blank" rel="noreferrer" href="https://github.com/sagakortesaari">
                   <Icon icon="akar-icons:github-fill" />
                 </a>
               </Button>
               <Button>
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/saga-kortesaari/"
-                >
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/saga-kortesaari/">
                   <Icon icon="akar-icons:linkedin-fill" />
                 </a>
               </Button>
               <Button>
-                <a target="_blank" href="mailto:saga@sagak.se">
+                <a target="_blank" rel="noreferrer" href="mailto:saga@sagak.se">
                   <Icon icon="fluent:mail-16-filled" />
                 </a>
               </Button>
