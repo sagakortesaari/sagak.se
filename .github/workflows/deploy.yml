@@ -17,11 +17,11 @@ jobs:
         node-version: 15.x
         
     - name: install npm deps
-      working-directory: ./web
+      working-directory: ./
       run: npm install
     
     - name: compile react app
-      working-directory: ./web
+      working-directory: ./
       run: npm run build
       
     
@@ -32,6 +32,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftps
-        local-dir: ./web/build/
+        local-dir: ./build
         server-dir: public_html/
         dangerous-clean-slate: false
