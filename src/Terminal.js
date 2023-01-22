@@ -11,7 +11,7 @@ const cat = `
   \`-.-'           \`-.       
     ;       \`        \`.     
     :.       .         \\    
-    . \  .   :   .-'     .   
+    . \\  .   :   .-'    .   
     '  \`+.;  ;  '       :   
     :  '  |    ;        ;-. 
     ; '   : :\`-:      _.\`* ;
@@ -27,10 +27,14 @@ const os = `
  \\__ \\ (_| | (_| | (_| |_\\__ \\ | | |
  |___/\\__,_|\\__, |\\__,_(_)___/_| |_|
              __/ |                  
-            |___/                                        
+            |___/
 `
 
-const prompt = "guest@sagak.se $" 
+const prompt = () => {
+  return (
+    <>guest@sagak.se&nbsp;$</>
+  )
+}
 
 export default function Terminal() {
   const [history, setHistory] = useState([]);
@@ -63,21 +67,21 @@ export default function Terminal() {
         {history.map((cmd, i) => {
           return (
             <div key={i}>
-              <div className="newcommand"><span id="prompt">{prompt}</span>{cmd}</div>
-              {cmd == "help" && GetCommands()}
-              {cmd == "clear" && setHistory([])}
-              {cmd == "education" && GetEducation()}
-              {cmd == "about" && GetAbout()}
-              {cmd == "whoami" && whoami()}
-              {cmd == "contact" && Contact()}
-              {cmd.substr(0,4) == "sudo" && sudo()}
+              <div className="newcommand"><span id="prompt">{prompt()}</span><span className="newcommand-cmd">{cmd}</span></div>
+              {cmd === "help" && GetCommands()}
+              {cmd === "clear" && setHistory([])}
+              {cmd === "education" && GetEducation()}
+              {cmd === "about" && GetAbout()}
+              {cmd === "whoami" && whoami()}
+              {cmd === "contact" && Contact()}
+              {cmd.substr(0,4) === "sudo" && sudo()}
               {!commands.has(cmd) && WrongCommand(cmd)}
             </div>
           )
         })}
       </div>
       <div className="cmd">
-        <span id="prompt">{prompt}</span> 
+        <span id="prompt">{prompt()}</span> 
         <form onSubmit={(e) => {e.preventDefault(); handleCommand();}}>
           <input type="text" value={cmd} onChange={e => setCmd(e.target.value)} className="prompt" autoFocus></input>
         </form>

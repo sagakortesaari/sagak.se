@@ -5,30 +5,46 @@ body {
 .terminal {
   font-family: 'Roboto Mono';
   color: white;
-  width: 600px;
-  font-size: 13px;
+  max-width: 600px;
+  width: 80%;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
 }
 
 .term-outer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .cmd {
   display: flex;
   margin-top: 3px;
+  padding-bottom: 20px;
 }
 
 .ascii {
+  width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 
+@media screen and (max-width: 650px) {
+  .ascii {
+    font-size: 7px;
+  }
+}
+
 #cat {
   padding-right: 15px;
+}
+
+#sh {
+  width: auto;
 }
 
 .newcommand {
@@ -36,12 +52,16 @@ body {
   margin-bottom: 3px;
 }
 
+.newcommand-cmd {
+  word-wrap: break-word;
+}
+
 #link {
   color: #f4b5f7;
 }
 
-#sh {
-  width: 300px;
+form {
+  flex: 1;
 }
 
 .prompt {
@@ -49,9 +69,9 @@ body {
   border: none;
   color: #f1e6fc;
   font-family: 'Roboto Mono';
-  font-size: 13px;
-  width: 450px;
-  margin-bottom: 50px;
+  font-size: 14px;
+  width: 100%;
+  caret-color: #d8b9fa;
 }
 
 .prompt:focus {
@@ -61,6 +81,7 @@ body {
 #prompt {
   color: #d8b9fa;
   padding-right: 10px;
+  width: fit-content;
 }
 
 .introduction {

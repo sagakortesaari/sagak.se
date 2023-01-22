@@ -12,7 +12,6 @@ export function GetEducation() {
 export function WrongCommand(cmd) {
   return (
     <div>
-      {console.log(cmd)}
       {cmd.substr(0,4) == "sudo" ? <></> :  <div> command not found. type <span id="highlight">help</span> to display all available commands.</div>}
     </div>
   )
@@ -30,7 +29,7 @@ export function GetAbout() {
   return (
     <div>
       <div>
-        Hey there! My name is Saga. I am a student, tech-nerd & a very creative person. Currently finishing up my M.Sc in Computer Science, with graduation in June 2023. 
+        Hey there! My name is Saga. I am a student, tech-nerd & a very creative person. Currently finishing up my M.Sc in Computer Science, graduating in June 2023. 
       </div>
       <br />
       <div>
