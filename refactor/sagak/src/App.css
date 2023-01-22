@@ -18,6 +18,7 @@ body {
 
 .cmd {
   display: flex;
+  margin-top: 3px;
 }
 
 .ascii {
@@ -27,6 +28,20 @@ body {
 
 #cat {
   padding-right: 15px;
+}
+
+.help {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newcommand {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#link {
+  color: #f4b5f7;
 }
 
 .prompt {

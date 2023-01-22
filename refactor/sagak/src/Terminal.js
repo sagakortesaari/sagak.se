@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { GetEducation, GetCommands, GetAbout, WrongCommand, available_commands } from './utils/commands';
 
 const cat = `
   _                        
   \`*-.                    
-  )  _\`-.                 
+   )  _\`-.                 
   .  : \`. .                
   : _   '  \\               
   ; *\` _.   \`*-._          
@@ -20,7 +21,7 @@ const cat = `
 
 const os = `
                           ____   _____ 
-                         / __ \ / ____|
+                         / __ \\ / ____|
  ___  __ _  __ _  __ _  | |  | | (___  
 / __|/ _\` |/ _\` |/ _\` | | |  | |\\___ \\ 
 \\__ \\ (_| | (_| | (_| | | |__| |____) |
@@ -47,11 +48,20 @@ export default function Terminal() {
         <pre>{os}</pre>
       </div>
       <div className="introduction">
-        <span id="highlight">welcome!</span> so excited you're here. type <span id="highlight">help</span> to start.
+        <span id="highlight">welcome!</span> so excited you're here. type <span id="highlight">help</span> to display all available commands.
       </div>
       <div className="history">
         {history.map((cmd, i) => {
-          return <div key={i}><span id="prompt">{prompt}</span>{cmd}</div>
+          return (
+            <div key={i}>
+              <div className="newcommand"><span id="prompt">{prompt}</span>{cmd}</div>
+              {cmd == "help" && GetCommands()}
+              {cmd == "clear" && setHistory([])}
+              {cmd == "education" && GetEducation()}
+              {cmd == "about" && GetAbout()}
+              {!available_commands.has(cmd) && WrongCommand()}
+            </div>
+          )
         })}
       </div>
       <div className="cmd">
