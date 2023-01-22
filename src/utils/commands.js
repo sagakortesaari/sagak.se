@@ -12,7 +12,7 @@ export function GetEducation() {
 export function WrongCommand(cmd) {
   return (
     <div>
-      {cmd.substr(0,4) == "sudo" ? <></> :  <div> command not found. type <span id="highlight">help</span> to display all available commands.</div>}
+      {cmd.substr(0,4) === "sudo" ? <></> :  <div> command not found. type <span id="highlight">help</span> to display all available commands.</div>}
     </div>
   )
 }
