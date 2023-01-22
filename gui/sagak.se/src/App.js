@@ -2,14 +2,13 @@ import styled from "styled-components";
 import profilepic from "./me.png";
 import { Icon } from "@iconify/react";
 
-import "./App.css";
 import { useState } from "react";
 
 const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   user-select: none;
-  background-color: ${(props) => (props.darkmode ? "#2c2c2c" : "fff")};
+  background-color: ${(props) => (props.darkmode ? "#282A36" : "fff")};
   color: ${(props) => (props.darkmode ? "#fff" : "000")};
   display: flex;
   font-family: "Outfit", sans-serif;
