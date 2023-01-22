@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+body {
+  background-color: #282A36;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.terminal {
+  font-family: 'Roboto Mono';
   color: white;
+  max-width: 600px;
+  width: 80%;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.term-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cmd {
+  display: flex;
+  margin-top: 3px;
+  padding-bottom: 20px;
+}
+
+.ascii {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media screen and (max-width: 650px) {
+  .ascii {
+    font-size: 7px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+#cat {
+  padding-right: 15px;
+}
+
+#sh {
+  width: auto;
+}
+
+.newcommand {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.newcommand-cmd {
+  word-wrap: break-word;
+}
+
+#link {
+  color: #f4b5f7;
+}
+
+form {
+  flex: 1;
+}
+
+.prompt {
+  background-color: transparent;
+  border: none;
+  color: #f1e6fc;
+  font-family: 'Roboto Mono';
+  font-size: 14px;
+  width: 100%;
+  caret-color: #d8b9fa;
+}
+
+.prompt:focus {
+  outline: none;
+}
+
+#prompt {
+  color: #d8b9fa;
+  padding-right: 10px;
+  width: fit-content;
+}
+
+.introduction {
+  padding: 2px;
+  margin-bottom: 25px;
+}
+
+#highlight {
+  color: #d8b9fa;
+  text-shadow: #fffce0 1px 0 5px;
 }
