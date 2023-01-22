@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+body {
+  background-color: #282A36;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.terminal {
+  font-family: 'Roboto Mono';
   color: white;
+  width: 600px;
+  font-size: 13px;
 }
 
-.App-link {
-  color: #61dafb;
+.term-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cmd {
+  display: flex;
+  margin-top: 3px;
+}
+
+.ascii {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#cat {
+  padding-right: 15px;
+}
+
+.newcommand {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#link {
+  color: #f4b5f7;
+}
+
+#sh {
+  width: 300px;
+}
+
+.prompt {
+  background-color: transparent;
+  border: none;
+  color: #f1e6fc;
+  font-family: 'Roboto Mono';
+  font-size: 13px;
+  width: 450px;
+  margin-bottom: 50px;
+}
+
+.prompt:focus {
+  outline: none;
+}
+
+#prompt {
+  color: #d8b9fa;
+  padding-right: 10px;
+}
+
+.introduction {
+  padding: 2px;
+  margin-bottom: 25px;
+}
+
+#highlight {
+  color: #d8b9fa;
+  text-shadow: #fffce0 1px 0 5px;
 }
