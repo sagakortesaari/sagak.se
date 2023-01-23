@@ -1,2 +1,5 @@
-my personal website/portfolio. 💻
-www.sagak.se
+![sagak.se](sagak.png)
+
+terminal based personal website 🐱💻
+
+
